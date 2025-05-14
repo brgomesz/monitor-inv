@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  nome  String
+  email String @unique
+  createdAt DateTime @default(now())
+}
+
+
+// ### Como adicionar um novo campo no sistema:
+
+// Para adicionar um novo campo no sistema, siga estes passos:
+
+// - Atualize o arquivo schema.prisma, incluindo o novo campo no modelo correspondente.
+// - No backend (server.js), adicione o campo nas rotas relevantes, como POST, PUT e consultas do Prisma.
+// - Execute o comando npx prisma db push para sincronizar o esquema com o banco de dados.
+// - Atualize o frontend, garantindo que o novo campo seja incluído nos formulários, requisições e exibições.
+// - Teste completamente para validar o fluxo do novo campo no sistema.
+
+// Próximos passos
+// Os próximos passos para evolução do projeto incluem:
+
+// - Conversão para uma lista de contatos completa.
+// - Implementação de autenticação para os usuários.
+// - Criação de filtros avançados (ex.: por idade, nome ou e-mail).
+// - Integração com front-end para visualização e interação.
