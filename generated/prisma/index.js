@@ -35,12 +35,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.8.1
+ * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.8.1",
+  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -136,12 +136,12 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
-  "clientVersion": "6.7.0",
-  "engineVersion": "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed",
+  "clientVersion": "6.8.1",
+  "engineVersion": "2060c79ba17c6bb9f5823312b6f6b7f4a845738e",
   "datasourceNames": [
     "db"
   ],
@@ -150,12 +150,12 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mongodb+srv://brunorodriguesgomes:sGVnUqBhlImmryms@monitorinvestimentos.4seqgoa.mongodb.net/Monitorinvestimentos?retryWrites=true&w=majority&appName=Monitorinvestimentos"
+        "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  nome      String\n  email     String   @unique\n  createdAt DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "18b535d374ef7e3534c901c653f497dbf170f06ad3e7a72007211a8dc1a9214b",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  nome      String\n  email     String   @unique\n  createdAt DateTime @default(now())\n}\n\n// ### Como adicionar um novo campo no sistema:\n\n// Para adicionar um novo campo no sistema, siga estes passos:\n\n// - Atualize o arquivo schema.prisma, incluindo o novo campo no modelo correspondente.\n// - No backend (server.js), adicione o campo nas rotas relevantes, como POST, PUT e consultas do Prisma.\n// - Execute o comando npx prisma db push para sincronizar o esquema com o banco de dados.\n// - Atualize o frontend, garantindo que o novo campo seja incluído nos formulários, requisições e exibições.\n// - Teste completamente para validar o fluxo do novo campo no sistema.\n\n// Próximos passos\n// Os próximos passos para evolução do projeto incluem:\n\n// - Conversão para uma lista de contatos completa.\n// - Implementação de autenticação para os usuários.\n// - Criação de filtros avançados (ex.: por idade, nome ou e-mail).\n// - Integração com front-end para visualização e interação.\n",
+  "inlineSchemaHash": "efb3c9b96368425044dfc3b9800b67239e85378be27540c90ec3d5e984410e13",
   "copyEngine": true
 }
 
